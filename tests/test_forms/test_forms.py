@@ -6,9 +6,20 @@ from taxi.models import Driver, Manufacturer
 
 class TestForm(TestCase):
     def setUp(self):
-        self.manufacturer = Manufacturer.objects.create(name="Fasd", country="asd")
-        self.driver1 = Driver.objects.create_user(username="Driver1", password="1234", license_number="TES12345")
-        self.driver2 = Driver.objects.create_user(username="Driver2", password="1234", license_number="TES12341")
+        self.manufacturer = Manufacturer.objects.create(
+            name="Fasd",
+            country="asd"
+        )
+        self.driver1 = Driver.objects.create_user(
+            username="Driver1",
+            password="1234",
+            license_number="TES12345"
+        )
+        self.driver2 = Driver.objects.create_user(
+            username="Driver2",
+            password="1234",
+            license_number="TES12341"
+        )
 
     def test_valid_data_car(self):
         form_data = {
